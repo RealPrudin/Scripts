@@ -1,0 +1,66 @@
+local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))()
+
+local WizLeg = library:CreateWindow("Wizard Legends")
+
+local Upgrade = WizLeg:CreateFolder("Upgrade")
+local Eggs = WizLeg:CreateFolder("Eggs")
+local Codes = WizLeg:CreateFolder("Codes")
+
+-- Upgrade
+
+Upgrade:Button("Upgrade Mind",function()
+    game:GetService("ReplicatedStorage").UpgradeStatLevel:InvokeServer("BackpackLevel")
+end)
+
+Upgrade:Button("Upgrade Mind MAX",function()
+    game:GetService("ReplicatedStorage").UpgradeAllStatLevel:InvokeServer("BackpackLevel")
+end)
+
+Upgrade:Button("Upgrade Wand",function()
+    game:GetService("ReplicatedStorage").UpgradeStatLevel:InvokeServer("WandLevel")
+end)
+
+Upgrade:Button("Upgrade Wand MAX",function()
+    game:GetService("ReplicatedStorage").UpgradeAllStatLevel:InvokeServer("WandLevel")
+end)
+
+Upgrade:Button("Upgrade Cloak",function()
+    game:GetService("ReplicatedStorage").UpgradeStatLevel:InvokeServer("CloakLevel")
+end)
+
+Upgrade:Button("Upgrade Cloak MAX",function()
+    game:GetService("ReplicatedStorage").UpgradeAllStatLevel:InvokeServer("CloakLevel")
+end)
+
+Upgrade:Button("Upgrade Crest",function()
+    game:GetService("ReplicatedStorage").UpgradeStatLevel:InvokeServer("CollectorLevel")
+end)
+
+Upgrade:Button("Upgrade Crest MAX",function()
+    game:GetService("ReplicatedStorage").UpgradeAllStatLevel:InvokeServer("CollectorLevel")
+end)
+
+Eggs:Button("Rat Egg",function()
+    game:GetService("ReplicatedStorage").PetStoreRoll:InvokeServer("VillageRatShop")
+end)
+
+Eggs:Button("Cat Egg",function()
+    game:GetService("ReplicatedStorage").PetStoreRoll:InvokeServer("VillageCatShop")
+end)
+
+Eggs:Button("Piguel Egg",function()
+    game:GetService("ReplicatedStorage").PetStoreRoll:InvokeServer("VillagePorkshop")
+end)
+
+Codes:Button("Use all codes",function()
+    game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("magicalcodes")
+    game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("potofgold")
+    game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("manaparty")
+    game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("PlanetMilo")
+    game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("dragon")
+    game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("snuglife")
+    game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("youtubemana")
+    game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("youtubewizard")
+    game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("wizardlegends")
+    game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("magiccoins")
+end)
