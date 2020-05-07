@@ -4,8 +4,10 @@ local WizLeg = library:CreateWindow("Wizard Legends")
 local Upgrade = WizLeg:CreateFolder("Upgrade")
 local Eggs = WizLeg:CreateFolder("Eggs")
 local Codes = WizLeg:CreateFolder("Codes")
+local Other = WizLeg:CreateFolder("Other")
+local Credits = WizLeg:CreateFolder("Credits")
 
--- Upgrade
+-- Upgrades
 
 Upgrade:Button("Upgrade Mind",function()
     game:GetService("ReplicatedStorage").UpgradeStatLevel:InvokeServer("BackpackLevel")
@@ -38,6 +40,62 @@ end)
 Upgrade:Button("Upgrade Crest MAX",function()
     game:GetService("ReplicatedStorage").UpgradeAllStatLevel:InvokeServer("CollectorLevel")
 end)
+
+local mindtoggle = false
+Upgrade:Toggle("Mind",function(bool5)
+mindtoggle = bool5
+end)
+
+spawn(function()
+while wait() do
+if manatoggle then
+    game:GetService("ReplicatedStorage").UpgradeAllStatLevel:InvokeServer("BackpackLevel")
+end
+end
+end)
+
+local wandtoggle = false
+Upgrade:Toggle("Wand",function(bool6)
+wandtoggle = bool6
+end)
+
+spawn(function()
+while wait() do
+if manatoggle then
+    game:GetService("ReplicatedStorage").UpgradeAllStatLevel:InvokeServer("WandLevel")
+end
+end
+end)
+
+local cloaktoggle = false
+Upgrade:Toggle("Cloak",function(bool7)
+cloaktoggle = bool7
+end)
+
+spawn(function()
+while wait() do
+if manatoggle then
+    game:GetService("ReplicatedStorage").UpgradeAllStatLevel:InvokeServer("CloakLevel")
+end
+end
+end)
+
+local cresttoggle = false
+Upgrade:Toggle("Crest",function(bool8)
+cresttoggle = bool8
+end)
+
+spawn(function()
+while wait() do
+if manatoggle then
+    game:GetService("ReplicatedStorage").UpgradeAllStatLevel:InvokeServer("CollectorLevel")
+end
+end
+end)
+
+-- Eggs
+
+Eggs:Label("Area 1",Color3.fromRGB(38,38,38),Color3.fromRGB(0,216,111))
 
 Eggs:Button("Rat Egg",function()
     game:GetService("ReplicatedStorage").PetStoreRoll:InvokeServer("VillageRatShop")
@@ -90,6 +148,10 @@ end
 end
 end)
 
+Eggs:Label("Area 2",Color3.fromRGB(38,38,38),Color3.fromRGB(0,216,111))
+
+-- Codes
+
 Codes:Button("Use all codes",function()
     game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("magicalcodes")
     game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("potofgold")
@@ -102,3 +164,44 @@ Codes:Button("Use all codes",function()
     game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("wizardlegends")
     game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("magiccoins")
 end)
+
+-- Other
+
+Other:Button("Tp to sell",function()
+    print("Toooo lazzzyyy")
+end)
+
+Other:Button("   Tp all mana to you",function()
+local children = workspace.ManaSpawners.Village:GetChildren()
+for _, child in pairs(children) do
+for _, child in pairs(child:GetChildren()) do
+end
+if child:IsA("BasePart") and child.Name == "Mana" then
+child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+end
+end
+end)
+
+local manatoggle = false
+Other:Toggle("Tp all mana to you",function(bool4)
+manatoggle = bool4
+end)
+
+spawn(function()
+while wait() do
+if manatoggle then
+local children = workspace.ManaSpawners:GetChildren()
+for _, child in pairs(children) do
+for _, child in pairs(child:GetChildren()) do
+end
+if child:IsA("BasePart") and child.Name == "Mana" then
+child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+end
+end
+end
+end
+end)
+
+-- Credits
+
+Credits:Label("Made by Prudin#6667",Color3.fromRGB(38,38,38),Color3.fromRGB(0,216,111))
