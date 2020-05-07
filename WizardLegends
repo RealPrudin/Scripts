@@ -1,7 +1,6 @@
 local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))()
 
 local WizLeg = library:CreateWindow("Wizard Legends")
-
 local Upgrade = WizLeg:CreateFolder("Upgrade")
 local Eggs = WizLeg:CreateFolder("Eggs")
 local Codes = WizLeg:CreateFolder("Codes")
@@ -50,6 +49,45 @@ end)
 
 Eggs:Button("Piguel Egg",function()
     game:GetService("ReplicatedStorage").PetStoreRoll:InvokeServer("VillagePorkshop")
+end)
+
+local rateggtoggle = false
+Eggs:Toggle("Rat Egg",function(bool1)
+rateggtoggle = bool1
+end)
+
+spawn(function()
+while wait() do
+if rateggtoggle then
+game:GetService("ReplicatedStorage").PetStoreRoll:InvokeServer("VillageRatShop")
+end
+end
+end)
+
+local categgtoggle
+Eggs:Toggle("Cat Egg",function(bool2)
+categgtoggle = bool2
+end)
+
+spawn(function()
+while wait() do
+if categgtoggle then
+game:GetService("ReplicatedStorage").PetStoreRoll:InvokeServer("VillageCatShop")
+end
+end
+end)
+
+local pigueleggtoggle
+Eggs:Toggle("Piguel Egg",function(bool3)
+pigueleggtoggle = bool3
+end)
+
+spawn(function()
+while wait() do
+if pigueleggtoggle then
+game:GetService("ReplicatedStorage").PetStoreRoll:InvokeServer("VillagePorkshop")
+end
+end
 end)
 
 Codes:Button("Use all codes",function()
