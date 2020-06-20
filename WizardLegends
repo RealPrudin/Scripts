@@ -4,7 +4,6 @@ local WizLeg = library:CreateWindow("Wizard Legends")
 local Upgrade = WizLeg:CreateFolder("Upgrade")
 local Eggs = WizLeg:CreateFolder("Eggs")
 local Codes = WizLeg:CreateFolder("Codes")
-local Events = WizLeg:CreateFolder("Events")
 local Other = WizLeg:CreateFolder("Other")
 local Credits = WizLeg:CreateFolder("Credits")
 
@@ -164,23 +163,6 @@ Codes:Button("Use all codes",function()
     game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("youtubewizard")
     game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("wizardlegends")
     game:GetService("ReplicatedStorage").PromoCodeRequest:InvokeServer("magiccoins")
-end)
-
--- Events
-
-Events:Button("Mana Event",function()
-local children = workspace.ManaSpawners.Village:GetChildren()
-for _, child in pairs(children) do
-for _, child in pairs(child:GetChildren()) do
-end
-if child:IsA("BasePart") and child.Name == "Mana" then
-child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-end
-end
-end)
-
-Events:Button("Rabbit Event",function()
-    print("idk")
 end)
 
 -- Other
