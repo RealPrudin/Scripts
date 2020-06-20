@@ -14,7 +14,7 @@ end)
 spawn(function()
 while wait(0.1)do
 if strengthtoggle then
-    game:GetService("ReplicatedStorage").Events.StatFunction:InvokeServer("Stat", "Strength")
+    game:GetService("ReplicatedStorage").RSPackage.Events.StatFunction:InvokeServer("Stat", "Strength")
 end
 end
 end)
@@ -27,7 +27,7 @@ end)
 spawn(function()
 while wait(0.1)do
 if durabilitytoggle then
-    game:GetService("ReplicatedStorage").Events.StatFunction:InvokeServer("Stat", "Durability")
+    game:GetService("ReplicatedStorage").RSPackage.Events.StatFunction:InvokeServer("Stat", "Durability")
 end
 end
 end)
@@ -40,7 +40,7 @@ end)
 spawn(function()
 while wait(0.1)do
 if chakratoggle then
-    game:GetService("ReplicatedStorage").Events.StatFunction:InvokeServer("Stat", "Chakra")
+    game:GetService("ReplicatedStorage").RSPackage.Events.StatFunction:InvokeServer("Stat", "Chakra")
 end
 end
 end)
@@ -53,7 +53,7 @@ end)
 spawn(function()
 while wait(0.1)do
 if swordtoggle then
-    game:GetService("ReplicatedStorage").Events.StatFunction:InvokeServer("Stat", "Sword")
+    game:GetService("ReplicatedStorage").RSPackage.Events.StatFunction:InvokeServer("Stat", "Sword")
 end
 end
 end)
@@ -62,11 +62,11 @@ Autofarm:Label("For sword you will need to have it in your hand and also you can
 
 Credits:Label("Made by Prudin#6667",Color3.fromRGB(38,38,38),Color3.fromRGB(0,216,111))
 
-Other:Slider("WalkSpeed",500,function(value)
+Other:Slider("WalkSpeed",100,function(value)
     game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = (value)
 end)
 
-Other:Slider("JumpPower",500,function(value)
+Other:Slider("JumpPower",350,function(value)
     game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = (value)
 end)
 
