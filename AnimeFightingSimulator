@@ -62,14 +62,6 @@ Autofarm:Label("For sword you will need to have it in your hand and also you can
 
 Credits:Label("Made by Prudin#6667",Color3.fromRGB(38,38,38),Color3.fromRGB(0,216,111))
 
-Other:Slider("WalkSpeed",100,function(value)
-    game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = (value)
-end)
-
-Other:Slider("JumpPower",350,function(value)
-    game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = (value)
-end)
-
 Other:DestroyGUI()
 
 Other:GuiSettings()
