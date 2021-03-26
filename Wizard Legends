@@ -65,7 +65,7 @@ end)
 
 spawn(function()
 while wait() do
-if manatoggle then
+if wandtoggle then
     game:GetService("ReplicatedStorage").UpgradeAllStatLevel:InvokeServer("WandLevel")
 end
 end
@@ -78,7 +78,7 @@ end)
 
 spawn(function()
 while wait() do
-if manatoggle then
+if cloaktoggle then
     game:GetService("ReplicatedStorage").UpgradeAllStatLevel:InvokeServer("CloakLevel")
 end
 end
@@ -91,7 +91,7 @@ end)
 
 spawn(function()
 while wait() do
-if manatoggle then
+if cresttoggle then
     game:GetService("ReplicatedStorage").UpgradeAllStatLevel:InvokeServer("CollectorLevel")
 end
 end
