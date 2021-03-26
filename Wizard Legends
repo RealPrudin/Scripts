@@ -168,7 +168,7 @@ end)
 -- Other
 
 Other:Button("Tp to sell",function()
-    print("fdsf")
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").World["City Island"].Village.SellShop.Hoop.Collider.CFrame
 end)
 
 Other:Button("   Tp all mana to you",function()
@@ -180,26 +180,6 @@ Other:Button("   Tp all mana to you",function()
         child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     end
     end
-end)
-
-local manatoggle = false
-Other:Toggle("Tp all mana to you",function(bool4)
-manatoggle = bool4
-end)
-
-spawn(function()
-while wait() do
-if manatoggle then
-local children = workspace.ManaSpawners:GetChildren()
-for _, child in pairs(children) do
-for _, child in pairs(child:GetChildren()) do
-end
-if child:IsA("BasePart") and child.Name == "Mana" then
-child.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-end
-end
-end
-end
 end)
 
 Credits:Label("Made by Prudin#6667",Color3.fromRGB(38,38,38),Color3.fromRGB(0,216,111))
