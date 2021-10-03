@@ -1,2 +1,2 @@
 # Scripts
-All my scripts i have created will be here except paid ones
+All my free scripts will be uploaded to this repository
