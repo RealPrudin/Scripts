@@ -1,4 +1,4 @@
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/508droid/AikaV3rm-UI-Lib/main/Lib.lua"))()
 local venyx = library.new("Deliveryman Simulator", 5013109572)
 
 local themes = {
@@ -21,101 +21,23 @@ local energyCount = game.Players.LocalPlayer.leaderstats.Energy.Value
 local strengthCount = game.Players.LocalPlayer.leaderstats.Strength.Value
 
 local function findArea(item)
-    if item == "Small Box (1 Strength)" then
+    if item == "Small Box (1 Strength)" or "Box (5 Strength)" or "Large Box (25 Strength)" or "Shiny Box (66.6 Strength)" or "Golden Box (200 Strength)" then
         selectedArea = "Beach"
-    elseif item == "Box (5 Strength)" then
-        selectedArea = "Beach"
-    elseif item == "Large Box (25 Strength)" then
-        selectedArea = "Beach"
-    elseif item == "Golden Chest (50 Strength)" then
+    elseif item == "Golden Chest (50 Strength)" or "Ruby Chest (500 Strength)" or "Diamond Chest (10k Strength)" or "Emerald Chest (25k Strength)" or "Sodalite Chest (60k Strength)" then
         selectedArea = "Event"
-    elseif item == "Shiny Box (66.6 Strength)" then
-        selectedArea = "Beach"
-    elseif item == "Golden Box (200 Strength)" then
-        selectedArea = "Beach"
-    elseif item == "Plate (416 Strength)" then
+    elseif item == "Plate (416 Strength)" or "Lantern (900 Strength)" or "Rock (1.5k Strength)" or "Seat (3.5k Strength)" or "Log (5k Strength)" then
         selectedArea = "Winter"
-    elseif item == "Ruby Chest (500 Strength)" then
-        selectedArea = "Event"
-    elseif item == "Lantern (900 Strength)" then
-        selectedArea = "Winter"
-    elseif item == "Rock (1.5k Strength)" then
-        selectedArea = "Winter"
-    elseif item == "Seat (3.5k Strength)" then
-        selectedArea = "Winter"
-    elseif item == "Log (5k Strength)" then
-        selectedArea = "Winter"
-    elseif item == "Golf Ball (6.6k Strength)" then
+    elseif item == "Golf Ball (6.6k Strength)" or "Pool Ball (11k Strength)" or "Basketball (14k Strength)" or "Pillow (18k Strength)" or "Ice (22.5k Strength)" then
         selectedArea = "City"
-    elseif item == "Diamond Chest (10k Strength)" then
-        selectedArea = "Event"
-    elseif item == "Pool Ball (11k Strength)" then
-        selectedArea = "City"
-    elseif item == "Basketball (14k Strength)" then
-        selectedArea = "City"
-    elseif item == "Pillow (18k Strength)" then
-        selectedArea = "City"
-    elseif item == "Ice (22.5k Strength)" then
-        selectedArea = "City"
-    elseif item == "Emerald Chest (25k Strength)" then
-        selectedArea = "Event"
-    elseif item == "Bread (41.6k Strength)" then
+    elseif item == "Bread (41.6k Strength)" or "Book (65k Strength)" or "Saw (75k Strength)" or "Stappy (100k Strength)" or "Cake (120k Strength)" then
         selectedArea = "Atlantis"
-    elseif item == "Sodalite Chest (60k Strength)" then
-        selectedArea = "Event"
-    elseif item == "Book (65k Strength)" then
-        selectedArea = "Atlantis"
-    elseif item == "Saw (75k Strength)" then
-        selectedArea = "Atlantis"
-    elseif item == "Stappy (100k Strength)" then
-        selectedArea = "Atlantis"
-    elseif item == "Cake (120k Strength)" then
-        selectedArea = "Atlantis"
-    elseif item == "Fries (150k Strength)" then
+    elseif item == "Fries (150k Strength)" or "Remote (220k Strength)" or "Crate (300k Strength)" or "Barrel (370k Strength)" or "Rowboat (450k Strength)" then
         selectedArea = "Moon"
-    elseif item == "Remote (220k Strength)" then
-        selectedArea = "Moon"
-    elseif item == "Crate (300k Strength)" then
-        selectedArea = "Moon"
-    elseif item == "Barrel (370k Strength)" then
-        selectedArea = "Moon"
-    elseif item == "Rowboat (450k Strength)" then
-        selectedArea = "Moon"
-    elseif item == "Mushroom (560k Strength)" then
+    elseif item == "Mushroom (560k Strength)" or "Crystal (825k Strength)" or "Cart (1M Strength)" or "Fountain (1.35M Strength" or "Cobble Wall (1.65M Strength)" then
         selectedArea = "Candy"
-    elseif item == "Crystal (825k Strength)" then
-        selectedArea = "Candy"
-    elseif item == "Cart (1M Strength)" then
-        selectedArea = "Candy"
-    elseif item == "Fountain (1.35M Strength" then
-        selectedArea = "Candy"
-    elseif item == "Cobble Wall (1.65M Strength)" then
-        selectedArea = "Candy"
-    elseif item == "Steak Uncooked (2.25M Strength)" then
+    elseif item == "Steak Uncooked (2.25M Strength)" or "Burger (2.6M Strength)" or "Shrimp (3M Strength)" or "Watermelon (3.5M Strength)" or "Toast (4.1M Strength)" or "Muffin (8.35M Strength)" or "Sweet Pepper (11M Strength)" or "Hotdog (15M Strength)" then
         selectedArea = "Cherry"
-    elseif item == "Burger (2.6M Strength)" then
-        selectedArea = "Cherry"
-    elseif item == "Shrimp (3M Strength)" then
-        selectedArea = "Cherry"
-    elseif item == "Watermelon (3.5M Strength)" then
-        selectedArea = "Cherry"
-    elseif item == "Toast (4.1M Strength)" then
-        selectedArea = "Cherry"
-    elseif item == "Muffin (8.35M Strength)" then
-        selectedArea = "Cherry"
-    elseif item == "Sweet Pepper (11M Strength)" then
-        selectedArea = "Cherry"
-    elseif item ==  "Hotdog (15M Strength)" then
-        selectedArea = "Cherry"
-    elseif item == "Cube (24M Strength)" then
-        selectedArea = "Volcano"
-    elseif item == "Colors Cube (30M Strength)" then
-        selectedArea = "Volcano"
-    elseif item == "Heart Cube (45M Strength)" then
-        selectedArea = "Volcano"
-    elseif item == "Dark Matter (65M Strength)" then
-        selectedArea = "Volcano"
-    elseif item == "Ice Cube (90M Strength)" then
+    elseif item == "Cube (24M Strength)" or "Colors Cube (30M Strength)" or "Heart Cube (45M Strength)" or "Dark Matter (65M Strength)" or "Ice Cube (90M Strength)" then
         selectedArea = "Volcano"
     end
 end
@@ -336,7 +258,7 @@ section2:addDropdown("Amount of items", {"1", "2", "3"}, function(option)
     elseif option == "3" then
         itemAmount = 3
     end
-    print("Selected: "..option.." item/items")
+    print("Selected: "..option.." item/s")
 end)
 
 --section 3
